@@ -1,0 +1,141 @@
+#map {
+	height:100%;
+	width:100%;
+}
+
+.mapaFondo{
+	width: 100%; height: 100%; position: absolute;
+}
+
+#class {
+	clear: left;
+}
+.infoWindowContent {
+	font-size:  14px !important;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+}
+
+.gm-style-iw div{
+	overflow: hidden !important;
+}
+
+.precio_oferta{
+	position: relative;
+    top: 20px;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.botonera{
+	position: absolute;
+	top: 10px;
+	left: 25px;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 3em;
+    height: 3em;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    margin-bottom: 6px;
+}
+
+.infoUsuario {
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	height: 50%;
+	font-size: 8px;
+	line-height: 1em;
+	padding: 0px !important;
+	text-align: center;
+}
+.infoUsuario input{
+	border:none !important;
+	width: 100%;
+	text-align: center;
+}
+.infoUsuario input:placeholder{
+	font-weight: 800;
+}
+.card-body p{
+	margin: 0px !important;
+	padding: 5px;
+}
+
+.mostrarUsuarios{
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	z-index: 15;
+}
+
+/*
+*/
+.b-toneras button:hover{
+	background: rgba(0,0,0,0);
+	color: #3a7999;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}
+
+.b-toneras{
+	position: absolute;
+    right: 5px;
+    bottom: 10px;
+}
+
+h2 {
+	margin-bottom:0;
+	margin-top: 0;
+}
+
+.perfil-foto-info{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 500px;
+}
+.izq-Info {
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    margin-left: -14px;
+    color: white
+    /*min-heigth: 500px;*/
+}
+.izq-Info h3{
+	font-weight: bolder !important;
+
+}
+.izq-Info h5{
+	margin-top: -25px;
+	margin-bottom: 25px;
+	font-weight: 400 !important;
+}
+.izq-Info p{
+	line-height: 1px;
+}
+
+.izq-Info p i{
+	font-size: 22px;
+	font-weight: 800;
+	line-height: 5px;
+}
+

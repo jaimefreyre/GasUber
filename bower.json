@@ -1,0 +1,26 @@
+{
+  "name": "GASUBER",
+  "authors": [
+    "Jaime <jaimefreyre@gmail.com>"
+  ],
+  "description": "Distribuidor de Gas por encargo con interaccion en google maps",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "angular": "^1.7.2",
+    "moment": "momentjs#^2.22.2",
+    "lodash": "^4.17.10",
+    "font-awesome": "^5.1.0",
+    "angular-websocket": "^2.0.0",
+    "jquery": "^3.3.1"
+  }
+}

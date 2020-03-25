@@ -1,0 +1,66 @@
+<div class="mapaFondo">
+	
+	<div id="map"></div>
+
+
+	<div class="botonera btn-group-vertical" >
+		<button href="#" class="btn-circle btn-primary" ng-click="stylosdemapas('styled_map')">
+			<i class="far fa-map"></i>
+		</button>
+		
+		<button href="#" class="btn-circle btn-secondary" ng-click="stylosdemapas('hybrid')">
+			<i class="fas fa-map"></i>	
+		</button>
+		
+		<button class="btn-circle btn-success" ng-click="cargarMapa()">
+			<i class="fas fa-sync-alt"></i>	
+		</button>
+
+		<button class="btn-circle btn-danger" ng-click="resetMapa(marcadores)">
+			<i class="fas fa-trash"></i>
+		</button>
+		
+		<button class="btn-circle btn-warning" ng-click="showTraffic(map)">
+			<i class="fas fa-bullhorn"></i>
+		</button>
+	</div>
+
+	<button href="#" class="btn-circle btn-success mostrarUsuarios" ng-click="infouser()">
+		<i class="fas fa-user-alt"></i>	
+	</button>
+
+	<div class="card infoUsuario" style="width:8rem;">
+
+		<img hidden class="card-img-top" src="../MDIA/uservacio.png" alt="Card image cap">
+		
+		<media-input usuario="USUARIO" sesion="sesion" predeterminada="{{vacio}}" class="card-img-top"></media-input>
+
+		<div class="card-body">
+			<h5 class="card-title">Usuario</h5>
+			<p>Nombre completo</p>
+			<p>Patente</p>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">
+				<input type="text" id="cargaUsuario" placeholder="Telefono">
+			</li>
+			<li class="list-group-item">
+				<label for="">Estado</label>
+				<select name="" id="">
+					<option value="">Habilitado</option>
+					<option value="">Deshabilitado</option>
+				</select>		
+			</li>
+			<li class="list-group-item">
+				<label for="">Cilindro 10 KG</label>
+				<input type="text" id="cargaUsuario" placeholder="cantidad">	
+			</li>
+			<li class="list-group-item">
+				<label for="">Cilindro 15 KG</label>
+				<input type="text" id="cargaUsuario" placeholder="cantidad">	
+			</li>
+		</ul>
+	
+</div>
+
+</div>

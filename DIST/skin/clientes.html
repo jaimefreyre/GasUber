@@ -1,0 +1,22 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 col-xs-12 perfil-foto-info" id="perfil" style="background-image: url({{sesion.FOTO}});">
+			<div class="izq-Info">
+				<h3 >{{sesion.USUARIO}}</h3>
+				<h5 style="margin-top: -15px;">{{sesion.NOMBRE}}</h5>
+				<p>Edad: {{sesion.EDAD}}</p>
+				<p>{{sesion.DIRECCION.nombre}}</p>
+				<p>{{sesion.EMAIL}}</p>
+				<p><i class="fab fa-whatsapp"></i> {{sesion.TELEFONO}}</p>
+			</div>
+		</div>
+		<div class="col-md-8 col-xs-12"  style="height: 500px" id="mapacliente">
+		</div>
+		<div class="col-md-2 col-xs-12" hidden>
+			<h3>Lo qu mata es la humedad</h3>
+			<p>Y afuera hace frio que rajas las piedras</p>
+			<h5>No dejes que te atormente laluna</h5>
+		</div>
+		
+	</div>
+</div>

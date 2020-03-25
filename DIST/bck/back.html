@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Panel de Ofertas</title>
+        <link rel="author" href="humans.txt">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/dist.css">
+    
+    </head>
+    <body>
+        <div ng-app="mapsApp" ng-controller="MapCtrl">
+		    <div id="map"></div>
+		    <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+		         <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+		    </div>
+		
+			<div>
+				<input type="text" ng-model="nm.city">
+				<input type="text" ng-model="nm.desc">
+				<input type="number" ng-model="nm.lat">
+				<input type="number" ng-model="nm.long">
+				<button ng-click="createMarker(nm)" value="Agregar Marcador">Nuevo</button>
+			</div>
+			
+			<div>
+				<button class="btn btn-success" ng-click="inicia()">Cargar</button>
+			</div>
+	
+
+		</div>
+
+
+		
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/lodash/dist/lodash.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7eVKPFMMwvfUDPSocdzWDKhPGPB6flvc"></script>  
+        <script src="js/back.js"></script>
+    </body>
+</html>

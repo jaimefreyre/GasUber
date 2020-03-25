@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="MAPS">
+  <head>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menuseleccion{
+        position: absolute;
+        background-color: rgba(0,0,0,.5);
+        color: white;
+        padding: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div ng-controller="MAPASCONTROL">
+      <div id="map"></div>
+      
+      <div class="menuseleccion">
+        <label for="latitud">
+          Latitud
+        </label>
+        <input type="number" ng-model="lat" name="latitud">
+        
+        <label for="longitud">
+          Longitud
+        </label>
+        <input type="number" ng-model="lon" name="longitud">
+        
+        <button value="cargar" ng-click="agregarPunto()">Agregar</button>
+        
+        <br><hr><br>
+        
+        <input type="text" ng-model="Numero" placeholder="Numero">
+        <input type="text" ng-model="Direccion" placeholder="Calle">
+        <input type="text" ng-model="Provincia_Estado" placeholder="Estado">
+        <input type="text" ng-model="Pais" placeholder="Pais">
+        <button value ng-click="geolocaliza()">Buscar</button>
+        <br>
+        <hr>
+        
+        <p>{{respuestaGeolocalizacion}}</p>
+
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7eVKPFMMwvfUDPSocdzWDKhPGPB6flvc&callback=initMap"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7eVKPFMMwvfUDPSocdzWDKhPGPB6flvc"></script>  
+    <script>
+      /**
+      *  Module
+      *
+      * Description
+      */
+      var MAPA_IN = angular.module('MAPS', []);
+      MAPA_IN.controller('MAPASCONTROL', ['$scope', '$http', function ($scope, $http) {
+        $scope.respuestaGeolocalizacion;
+        $scope.add = {};
+        $scope.add.key = 'AIzaSyA7eVKPFMMwvfUDPSocdzWDKhPGPB6flvc';
+
+        $scope.initialize = function() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+             center: {lat: -34.397, lng: -50.644},
+             zoom: 6
+          });
+          $scope.mostrarMapaMarca(direccionesMapa, map);
+        }    
+
+
+        $scope.geolocaliza =  function(parametros){
+        
+          let http = $http({
+            method: 'GET',
+            url: "https://maps.googleapis.com/maps/api/geocode/json?address="+$scope.Numero + $scope.Direccion + $scope.Provincia_Estado + $scope.Pais+'&key='+$scope.add.key,
+            cache: false});
+
+          http.then(function(data){
+            console.log(data);
+            $scope.respuestaGeolocalizacion = data.data.results[0].formatted_address;
+            $scope.lat = data.data.results[0].geometry.location.lat;
+            $scope.lon = data.data.results[0].geometry.location.lng;
+            console.log($scope.lat, $scope.lon)
+            $scope.agregarPunto();
+          }, function(error){
+            console.log(error);
+          });
+        }
+
+
+        //https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+
+
+        var direccionesMapa = [[-34.86, -54.99], [-34.86, -51.99], [-34.86, -53.99], [-34.86, -52.99], [-34.86, -50.99] ];
+        $scope.mostrarMapaMarca = function(arrayDireccion, map){
+          for (var i = 0; i < arrayDireccion.length; i++) {
+            let marker = new google.maps.Marker({
+              position: {lat: arrayDireccion[i][0], lng: arrayDireccion[i][1]},
+              map: map
+            });
+          }
+        }
+
+          $scope.agregarPunto = function(){
+            let diagr = [$scope.lat, $scope.lon];
+            direccionesMapa.push(diagr);
+            console.log(direccionesMapa);
+            $scope.initialize();
+          }
+
+
+
+        google.maps.event.addDomListener(window, 'load', $scope.initialize); 
+        
+
+
+      }])
+    </script>
+  </body>
+</html>

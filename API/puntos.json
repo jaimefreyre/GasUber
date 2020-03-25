@@ -1,0 +1,108 @@
+[
+    {
+        "cliente":{
+            "nombre" : "POROTOS",
+            "contactos": {
+                "tel": 11111,
+                "email": "kiko@gmail.com"
+            }   
+        },
+        "direccion": {
+            "nombre" : "5555 de la calle siempre viva",
+            "lat": -0.23584,
+            "long": -78.492567
+        },
+        "producto":[ {
+                    "tipo": "garrafa 15kg",
+                    "precio": 45
+                }],
+        "distribuidor": {
+            "nombre": "",
+            "patente": 0
+        },
+        "demora": 0,
+        "estado": "insatisfecha",
+        "id": 1 
+    },
+    {
+        "cliente":{
+            "nombre" : "jajajajaajjajaja",
+            "contactos": {
+                "tel": 11111,
+                "email": "kiko@gmail.com"
+            }   
+        },
+        "direccion": {
+            "nombre" : "5555 de la calle siempre viva",
+            "lat" : -0.126702, 
+            "long" : -78.492367
+        },
+        "producto":[ 
+                {
+                    "tipo": "garrafa 15kg",
+                    "precio": 45
+                }, 
+                {
+                    "tipo": "garrafa 15kg",
+                    "precio": 45
+                }
+            ],
+        "distribuidor": {
+            "nombre": "",
+            "patente": 0
+        },
+        "demora": 0,
+        "estado": "insatisfecha",
+        "id": 2 
+    },
+        {
+        "cliente":{
+            "nombre" : "tri",
+            "contactos": {
+                "tel": 11111,
+                "email": "kiko@gmail.com"
+            }   
+        },
+        "direccion": {
+            "nombre" : "5555 de la calle siempre viva",
+            "lat" : -0.126852, 
+            "long" : -78.492900
+        },
+        "producto":[ {
+                    "tipo": "garrafa 15kg",
+                    "precio": 45
+                }],
+        "distribuidor": {
+            "nombre": "",
+            "patente": 0
+        },
+        "demora": 0,
+        "estado": "insatisfecha",
+        "id": 7 
+    },
+        {
+        "cliente":{
+            "nombre" : "ana",
+            "contactos": {
+                "tel": 11111,
+                "email": "kiko@gmail.com"
+            }   
+        },
+        "direccion": {
+            "nombre" : "5555 de la calle siempre viva",
+            "lat" : -0.126852, 
+            "long" : -78.492900
+        },
+        "producto":[ {
+                    "tipo": "garrafa 15kg",
+                    "precio": 45
+                }],
+        "distribuidor": {
+            "nombre": "",
+            "patente": 0
+        },
+        "demora": 0,
+        "estado": "insatisfecha",
+        "id": 9 
+    }
+]
